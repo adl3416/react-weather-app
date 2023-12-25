@@ -1,7 +1,30 @@
-import axios from 'axios';
+import Form from './components/form.js';
+import Info from './components/info.js';
+import './components/style.css'
+
+
+function App(){
+  return(
+    <div>
+      <Form/>
+      <Info/>
+    </div>
+  )
+}
+
+
+export default App;
+
+
+
+
+
+
+
+/* import axios from 'axios';
 import './App.css';
 import { useEffect, useState } from 'react';
-import City from './city';
+import City from './components/city';
 
 
 
@@ -33,7 +56,7 @@ function App() {
   getApi();
 
   
- }, [search]);  // arayn in ici bos ise uygulama ilk calistig zaman render olcak
+ }, [search]);  // arayn in ici bos ise uygulama ilk calistig zaman render olcak dolu ise dolu olan render olur
 
  console.log(search)
  
@@ -56,3 +79,4 @@ function App() {
 }
 
 export default App;
+ */
