@@ -1,10 +1,10 @@
 import React, { useEffect, useState,} from 'react'
 import axios from 'axios'
 
-const Form = ({setInfo,setState}) => {
+const Form = ({info,setInfo,setState}) => {
 
      const [city, setCity] = useState("")
-     //useEffect(() => console.log (info), [info])
+     useEffect(() => console.log (info), [info])
 
      const handleChange= async()=>{
           const key ="aeb6cab69d44bac1f55124b25acb4e10";
