@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import Form from './components/form.js';
 import Info from './components/info.js';
 import './components/style.css'
 
 
 function App(){
+  const [info, setInfo]= useState([]);
+  const [state, setState]= useState(false);
+
   return(
     <div>
-      <Form/>
-      <Info/>
+      <Form setInfo={setInfo} setState={setState}/>
+      <Info info={info}  state={state}/>
     </div>
   )
 }
@@ -21,7 +25,7 @@ export default App;
 
 
 
-/* import axios from 'axios';
+/* import axios from 'axios'; 
 import './App.css';
 import { useEffect, useState } from 'react';
 import City from './components/city';

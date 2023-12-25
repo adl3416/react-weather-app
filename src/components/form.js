@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,} from 'react'
 import axios from 'axios'
 
-const Form = () => {
+const Form = ({setInfo,setState}) => {
 
      const [city, setCity] = useState("")
-     useEffect(() => console.log (city), [city])
+     //useEffect(() => console.log (info), [info])
 
-     const handleChange=()=>{
+     const handleChange= async()=>{
           const key ="aeb6cab69d44bac1f55124b25acb4e10";
           const baseURL=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=tr`
           
-          axios(baseURL).then(data => console.log(data));
+          await axios(baseURL).then(respons => setInfo(respons.data));
+          setState(true)
 
      }
      
@@ -22,7 +23,7 @@ const Form = () => {
 
      <form onSubmit={(e) =>{ e.preventDefault(); handleChange()}}>
           <div className='form'>
-               <input onChange={(e)=> setCity(e.target.value)} className='inputText' type='text' placeholder='Sehri Giriniz'></input>
+               <input value={city} onChange={(e)=> setCity(e.target.value)} className='inputText' type='text' placeholder='Sehri Giriniz'></input>
           </div>
 
           <div className='btnDiv'>
