@@ -6,6 +6,9 @@
  
  body {
      background: linear-gradient(rgb(0 0 0 / 60%) 0 0), url(../assets/img.jpg) no-repeat;
+     width: 100vw;
+     height: 100vh;
+
  }
  
  h1 {
