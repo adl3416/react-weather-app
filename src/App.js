@@ -1,29 +1,25 @@
-import { useState } from 'react';
-import Form from './components/form.js';
-import Info from './components/info.js';
-import './components/style.css'
+import { useEffect, useState } from "react";
+import Form from "./components/form.js";
+import Info from "./components/info.js";
+import "./components/style.css";
 
+function App() {
+  const [info, setInfo] = useState(null);
+  const [state, setState] = useState(false);
 
-function App(){
-  const [info, setInfo]= useState([]);
-  const [state, setState]= useState(false);
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
 
-  return(
+  return (
     <div>
-      <Form setInfo={setInfo} setState={setState}/>
-      <Info info={info}  state={state}/>
+      <Form setInfo={setInfo} setState={setState} />
+      {info != null && <Info info={info} state={state} />}
     </div>
-  )
+  );
 }
 
-
 export default App;
-
-
-
-
-
-
 
 /* import axios from 'axios'; 
 import './App.css';

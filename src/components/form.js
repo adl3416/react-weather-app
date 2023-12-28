@@ -3,17 +3,24 @@ import axios from "axios";
 
 const Form = ({ info, setInfo, setState }) => {
   const [city, setCity] = useState("");
+
   useEffect(() => console.log(info), [info]);
 
   const handleChange = async () => {
-    const key = "aeb6cab69d44bac1f55124b25acb4e10";
-    const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=tr`;
+    try {
+      const key = "aeb6cab69d44bac1f55124b25acb4e10";
+      const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=tr`;
 
-    await axios(baseURL).then(
-      (respons) => setInfo(respons.data),
-      (err) => alert("Sehir Bulunamadi")
-    );
-    setState(true);
+      await axios(baseURL).then((respons) => {
+        console.log(respons.data);
+        setInfo(respons.data);
+      });
+      setState(true);
+    } catch (error) {
+      alert("Sehir Bulunamadi");
+      setCity("");
+      setState(false);
+    }
   };
 
   return (
