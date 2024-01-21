@@ -1,6 +1,6 @@
 import React from "react";
 
-const City = ({ city }) => {
+const City = ({ city }) => {  //
   console.log(city);
   return (
     <div>
