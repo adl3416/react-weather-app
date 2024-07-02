@@ -25,8 +25,7 @@ const Form = ({ info, setInfo, setState }) => {
 
   return (
     <div>
-      <h1> HARUN  Abi </h1>
-      <h1> Erzincan  a  da Bak</h1>
+      
       <h1>Hava Durumu </h1>
 
       <form
