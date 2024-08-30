@@ -26,7 +26,7 @@ const Form = ({ info, setInfo, setState }) => {
   return (
     <div>
       
-      <h1>Burak durumu </h1>
+      <h1>Hava Durumu</h1>
 
       <form
         onSubmit={(e) => {
